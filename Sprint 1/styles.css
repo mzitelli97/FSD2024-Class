@@ -1,0 +1,15 @@
+body {
+    background-color: gray;
+}
+
+#primero {
+    font-weight: bold;
+}
+
+.fuerte {
+    font-weight: 900;
+}
+
+/* body h1 p[class="fuerte"] {
+    font-size: large;
+} */
