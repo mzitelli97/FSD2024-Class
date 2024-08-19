@@ -1,0 +1,63 @@
+body {
+  background-color: gray;
+}
+
+#primero {
+  font-weight: bold;
+}
+
+.fuerte {
+  font-weight: 900;
+}
+
+/* body h1 p[class="fuerte"] {
+    font-size: large;
+} */
+li[class=rojo] {
+  color: rgba(231, 130, 71, 0.705);
+}
+
+ul li {
+  list-style-type: square;
+}
+
+.contenedor {
+  font-weight: bold;
+  background-color: antiquewhite;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+#enlaces a {
+  color: red;
+  cursor: all-scroll;
+  text-decoration: line-through;
+}
+
+.caja {
+  border: 1px solid gray;
+  padding: 10px;
+  margin: 5em;
+  width: 50%;
+  height: 30vh;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 24px;
+  }
+  p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 500px) {
+  h1 {
+    font-size: 14px;
+  }
+  p {
+    font-size: 7px;
+  }
+}/*# sourceMappingURL=stylesPro.css.map */
