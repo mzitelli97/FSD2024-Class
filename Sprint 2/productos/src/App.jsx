@@ -1,8 +1,7 @@
 import './App.css';
-import { useEffect, useState } from 'react';
 import Layout from './Layout';
 import { FilterableProductTable } from './ProductList';
-import { createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ProductItem } from './ProductItem';
 import { action as productAction, loader as productsLoader} from  './Layout';
 import { ProductForm } from './ProductForm';

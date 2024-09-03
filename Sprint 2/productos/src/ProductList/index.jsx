@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import SearchBar from '../SearchBar';
 import { useTheme } from '../ThemeContext';
 import { useLoaderData } from 'react-router-dom';
@@ -83,7 +83,7 @@ export function FilterableProductTable() {
 	// })
     const [filterText, setFilterText] = useState("");
     const [filterExpensive, setFilterExpensive] = useState(false);
-    const { theme, toggleTheme } = useTheme();
+    const { theme } = useTheme();
 
     return (
         <div className={`max-w-4xl mx-auto p-4 ${theme === 'dark' ? 'bg-gray-800 text-white' : 'bg-white text-black'}`}>

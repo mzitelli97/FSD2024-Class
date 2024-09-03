@@ -1,6 +1,6 @@
 import {NavLink, Outlet, Form, redirect, useLoaderData, Link} from 'react-router-dom';
 import { ThemeProvider } from './ThemeContext';
-import { createContact, getContact, updateContact, getContacts } from './contacts';
+import { createContact, getContacts } from './contacts';
 
 export async function action() {
     const contact = await createContact();
