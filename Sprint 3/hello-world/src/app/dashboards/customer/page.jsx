@@ -5,7 +5,9 @@ export const metadata = {
     'title': 'Customers'
 }
 
-export default function Customer() {
+export default async function Customer() {
+  const data = await fetch("https://jsonplaceholder.typicode.com/users");
+  const users = await data.json();
   return (
     <div className="bg-green-600 grid grid-rows-[20px_1fr_20px] items-center justify-items-center  p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
@@ -18,14 +20,14 @@ export default function Customer() {
           priority
         />
         <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
+          {users.map(user => {
+            return (
+            <li className="mb-2" key={user.id}>
+              <Link href={`dashboards/customer/${user.id}/`}>
+                {user.id} - {user.name} - {user.username}
+              </Link>
+            </li>)
+          })}
         </ol>
       </main>
     </div>
