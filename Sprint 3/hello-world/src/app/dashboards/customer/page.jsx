@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+export const revalidate = 30;
+
 export const metadata = {
     'title': 'Customers'
 }
@@ -23,7 +25,7 @@ export default async function Customer() {
           {users.map(user => {
             return (
             <li className="mb-2" key={user.id}>
-              <Link href={`dashboards/customer/${user.id}/`}>
+              <Link href={`customer/${user.id}`}>
                 {user.id} - {user.name} - {user.username}
               </Link>
             </li>)
