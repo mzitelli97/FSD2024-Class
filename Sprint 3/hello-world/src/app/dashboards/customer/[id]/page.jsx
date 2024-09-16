@@ -9,6 +9,9 @@ export default async function CustomerDetail(prop) {
 
   // Sigue el componente
   console.log(prop);
+
+  const data = await fetch("https://jsonplaceholder.typicode.com/users");
+  const users = await data.json();
   return (
     <div className="bg-green-600 grid grid-rows-[20px_1fr_20px] items-center justify-items-center  p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
