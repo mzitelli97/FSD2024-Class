@@ -1,4 +1,6 @@
 import Image from "next/image";
+import styles from "@/app/dashboards/customer/[id]/customer.module.css";
+import { Details } from "./details";
 
 export default async function CustomerDetail(prop) {
   // Ejemplos de deconstruccion de objectos
@@ -8,10 +10,10 @@ export default async function CustomerDetail(prop) {
   console.log(y);
 
   // Sigue el componente
-  console.log(prop);
+  // console.log(prop);
 
-  const data = await fetch("https://jsonplaceholder.typicode.com/users");
-  const users = await data.json();
+  const data = await fetch(`https://jsonplaceholder.typicode.com/users/${prop.params?.id}`);
+  const user = await data.json();
   return (
     <div className="bg-green-600 grid grid-rows-[20px_1fr_20px] items-center justify-items-center  p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
@@ -23,7 +25,12 @@ export default async function CustomerDetail(prop) {
           height={38}
           priority
         />
-        Usuario: {prop.params?.id}
+        <p className={styles.user}>
+          Usuario: {user?.id}<br/>
+          {user?.name} - {user?.username}<br/>
+          {user?.phone}
+        </p>
+        <Details user={user.id}/>
       </main>
     </div>
   );
