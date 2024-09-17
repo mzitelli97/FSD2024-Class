@@ -5,7 +5,8 @@ import { SyncButton } from "./sync";
 // export const revalidate = 1;
 
 export const metadata = {
-    'title': 'Customers'
+    'title': 'Customers',
+    'description': "Pagina de clientes, blabla"
 }
 
 const cache = {

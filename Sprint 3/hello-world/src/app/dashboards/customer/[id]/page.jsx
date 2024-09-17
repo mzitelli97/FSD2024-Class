@@ -1,6 +1,11 @@
 import Image from "next/image";
 import styles from "@/app/dashboards/customer/[id]/customer.module.css";
 import { Details } from "./details";
+import {inter, lusitana} from "@/app/fonts";
+
+// Para uso en client components
+// import dynamic from "next/dynamic";
+// const Details = dynamic(() => import("./details"));
 
 export default async function CustomerDetail(prop) {
   // Ejemplos de deconstruccion de objectos
@@ -25,7 +30,7 @@ export default async function CustomerDetail(prop) {
           height={38}
           priority
         />
-        <p className={styles.user}>
+        <p className={`${styles.user} ${lusitana.className}`}>
           Usuario: {user?.id}<br/>
           {user?.name} - {user?.username}<br/>
           {user?.phone}
