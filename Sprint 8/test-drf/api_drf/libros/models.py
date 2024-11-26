@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import CASCADE
 
 # Create your models here.
 class Libro(models.Model):
@@ -8,6 +9,7 @@ class Libro(models.Model):
     author = models.CharField(max_length=256)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    owner = models.ForeignKey('auth.User', on_delete=CASCADE, related_name='libros', default=1)
 
     class Meta:
         ordering = ('-created_at',)
